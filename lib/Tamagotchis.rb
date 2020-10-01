@@ -22,4 +22,31 @@ class Tamagotchi
       return false
     end
   end
+
+  def set_food_level(amount, operation)
+    if operation = "feed"
+      @food_level = +amount
+    else
+      @food_level = -amount
+    end
+    return @food_level
+  end
+
+  def time_passes(days)
+    @food_level -= days * 1
+  end
+
+  def play_with_pet(time = 30)
+    @food_level += time
+    @sleep_level += time
+    @activity_level += time
+  end
+
+  def take_a_nap(hours)
+    if hours == 8
+      @sleep_level += 1
+    elsif hours <= 4
+      @sleep_level += 0.5
+    end
+  end
 end

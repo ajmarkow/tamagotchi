@@ -15,13 +15,12 @@ describe(Tamagotchi) do
   describe("#is_alive") do
     it("is alive if the food level is above 0") do
       my_pet = Tamagotchi.new({ :name => "lil dragon", :food_level => 10, :sleep_level => 10, :activity_level => 10 })
-
       expect(my_pet.is_alive()).to(eq(true))
     end
 
     it("is dead if the food level is 0") do
-      my_pet = Tamagotchi.new({ :name => "lil dragon", :food_level => 10, :sleep_level => 10, :activity_level => 10 })
-      my_pet.set_food_level() #make a method that will change the food level of your tamagotchi.
+      my_pet = Tamagotchi.new({ :name => "lil dragon", :food_level => 10, :sleep_level => 0, :activity_level => 0 })
+      my_pet.set_food_level(10, "diet") #make a method that will change the food level of your tamagotchi.
       expect(my_pet.is_alive()).to(eq(false))
     end
   end
@@ -29,8 +28,27 @@ describe(Tamagotchi) do
   describe("#time_passes") do
     it("decreases the amount of food the Tamagotchi has left by 1") do
       my_pet = Tamagotchi.new({ :name => "lil dragon", :food_level => 10, :sleep_level => 10, :activity_level => 10 })
-      my_pet.time_passes()  #decide what trigger you will use to make time pass
-      expect(my_pet.food_level()).to(eq(9))
+      my_pet.time_passes(7)  #decide what trigger you will use to make time pass
+      expect(my_pet.food_level()).to(eq(3))
+    end
+  end
+
+  describe("#play_with_pet") do
+    it("play time increases each level") do
+      my_pet = Tamagotchi.new({ :name => "lil dragon", :food_level => 10, :sleep_level => 10, :activity_level => 10 })
+      my_pet.play_with_pet(7)  #decide what trigger you will use to make time pass
+      expect(my_pet.food_level()).to(eq(17))
+      expect(my_pet.sleep_level()).to(eq(17))
+      expect(my_pet.activity_level()).to(eq(17))
+    end
+  end
+
+  describe ("#take_a_nap") do
+    it("increases tamagotchis sleep level proportional to hours") do
+      my_pet = Tamagotchi.new({ :name => "lil dragon", :food_level => 10, :sleep_level => 10, :activity_level => 10 })
+      my_2pet = Tamagotchi.new({ :name => "lil dragon", :food_level => 10, :sleep_level => 10, :activity_level => 10 })
+      expect(my_pet.take_a_nap(3)).to(eq(10.5))
+      expect(my_2pet.take_a_nap(8)).to(eq(11))
     end
   end
 end
