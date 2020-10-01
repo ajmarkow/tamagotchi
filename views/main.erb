@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+    <IMG style="max-height:30%;display: block; margin-left: auto; margin-right: auto; width:40%;" SRC ="tamagotchi.jpg">
+    <h1>Virtual Tamagotchi<h1>
+      <button type="button" name="Feed" id="feed" class="btn btn-primary" btn-lg btn-block">Feed Your Tamagotchi</button>
+      <button type="button" name="Nap" id="nap" class="btn btn-primary" btn-lg btn-block">Give Your Tamagotchi a Nap</button>
+      <button type="button" name="Play" id="play" class="btn btn-primary" btn-lg btn-block">Play With Your Tamagotchi</button>
+      <button type="button" name="Jump" id="jump" class="btn btn-primary" btn-lg btn-block">Jump Forward a day</button>
+      </div>
+      <h3 class='display-2'>Name your tamagotchi</h3><form class="form-inline">
+        <form>
+        <div class="form-group">
+          <label for="">The name you chose</label>
+          <input type="text" name="tamagotchiname" id="tamagotchiname" class="form-control" placeholder="" aria-describedby="helpId">
+          <small id="helpId" class="text-muted">Write it here!</small><br>
+          <button class="btn btn-primary" type='submit'>Set their name</button>
+        </div>
+
+      </form>
+      <hr>
+      <h2 class='display-2'>Your tamagotchi's name is:  <%= @name %></h2>
+     
+    </div>
+</div>

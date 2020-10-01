@@ -24,7 +24,7 @@ class Tamagotchi
   end
 
   def set_food_level(amount, operation)
-    if operation = "feed"
+    if operation == "feed"
       @food_level = +amount
     else
       @food_level = -amount
