@@ -1,4 +1,15 @@
-<div class="container special">
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Virtual Tamagotchi</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+<link href="https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap" rel="stylesheet"> 
+         <link href="http://www.example.com/styles.css" rel="stylesheet" type="text/css" />
+ </head>
+  <body>
+    <div class="container">
+        <IMG SRC ="tamagotchi.svg" height="275" width="275">
+      <div class="container special">
   <div class="row">
     <div class="col-4">
     <h1>Virtual Tamagotchi<h1>
@@ -19,7 +30,7 @@
       <button type="submit" name="Jump" id="jump" class="btn btn-primary" btn-lg btn-block">Jump Forward a day</button>
       </form>
       </div>
-      <h3 class='display-2'>Name your tamagotchi</h3>
+      <h3 class='display-2'>Name your tamagotchi</h3><form class="form-inline">
         <form action="/name" method="post">
         <div class="form-group">
           <label for="name">The name you chose</label>
@@ -29,7 +40,10 @@
         </div>
       </form>
       <hr>
-      <h2 class='display-2'>Your tamagotchi's name is:  <%= @name %></h2>
+      <h2 class='display-2'>Your tamagotchi's name is:  </h2>
      
     </div>
 </div>
+    </div>
+  </body>
+</html>

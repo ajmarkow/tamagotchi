@@ -49,4 +49,8 @@ class Tamagotchi
       @sleep_level += 0.5
     end
   end
+
+  def save
+    @@alltamagotchis = Tamagotchi.new({ :name => self.name, :food_level => 10, :sleep_level => 10, :activity_level => 10 })
+  end
 end

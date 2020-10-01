@@ -23,3 +23,14 @@ end
 get("/dayplus") do
   erb(:dayplus)
 end
+
+post("/name") do
+  @name = params[:name]
+  example = Tamagotchi.new({ :name => @name, :food_level => 10, :sleep_level => 10, :activity_level => 10 })
+  example.save()
+  erb(:name)
+end
+
+get("/name") do
+  erb(:name)
+end
