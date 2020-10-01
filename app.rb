@@ -34,3 +34,8 @@ end
 get("/name") do
   erb(:name)
 end
+
+post("/nap") do
+  example.save()
+  erb(:nap)
+end

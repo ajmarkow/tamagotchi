@@ -51,6 +51,6 @@ class Tamagotchi
   end
 
   def save
-    @@alltamagotchis = Tamagotchi.new({ :name => self.name, :food_level => 10, :sleep_level => 10, :activity_level => 10 })
+    @@alltamagotchis = Tamagotchi.new({ :name => self.name, :food_level => self.food_level, :sleep_level => self.sleep_level, :activity_level => self.activity_level })
   end
 end

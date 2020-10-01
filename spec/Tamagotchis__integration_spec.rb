@@ -15,3 +15,4 @@ describe("creates a named tamagotchi", { :type => :feature }) do
     save_and_open_page
   end
 end
+
